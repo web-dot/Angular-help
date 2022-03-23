@@ -1,0 +1,19 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300&family=Nunito+Sans:wght@700;900&family=Open+Sans+Condensed:ital,wght@1,300&family=Open+Sans:wght@300&family=Roboto:wght@300&family=Shrikhand&display=swap');
+.role{
+  font-family: 'Lato', sans-serif;
+}
+.navbar{
+  box-shadow: 0 3px 5px 0 #e2e2e2;
+}
+h2{
+  margin-top: 9px;
+}
+a{
+  color: #fff;
+}
+img{
+  width: 3%;
+  height: 3%;
+  margin-left: 100px;
+}

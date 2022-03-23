@@ -1,0 +1,334 @@
+<app-landingpage-navbar></app-landingpage-navbar>
+
+<hr>
+<div class="container">
+  <div class="row">
+      <div class="col-md-offset-1 col-md-10">
+
+        <p>
+          <strong>REFERENCE-> BINDING SYNTAX: DATA BINDING AND HTML:</strong><br>
+          <br>
+          <strong>Use data binding to control things like the state of a button:</strong><br>
+          <br>
+          <button mat-raised-button color="primary" [disabled]="isUnchanged">Data Binding</button>
+          <br>
+          Notice that the binding is to the 'disabled' property of the button's DOM element, not the attribute.<br>
+          Data binding works with properties of DOM elements, components, and directives, not HTML attributes.<br>
+          <br>
+          <strong>HTML attributes and DOM properties are different things, even when they have the same name.</strong><br>
+          In Angular, the only role of HTML attributes is to initialize element and directive state.<br>
+          <br>
+          When you write a data binding, you're dealing exclusively with the DOM properties and events of the target object.
+        </p>
+        <hr>
+        <p>
+          <strong>Example 1: an input</strong>
+          <br>
+          When the browser renders &lt;input type="text" value="Sarah"&gt;, it creates a corresponding DOM node with a value property and initializes that value to "Sarah".
+        </p>
+        <input type="text" value="Sarah">
+        <hr>
+        <p>
+          When the user enters Sally into the &lt;input&gt;, the DOM element value property becomes Sally.<br>
+          However, if you look at the HTML attribute value using input.getAttribute('value'), you can see that<br>
+          the attribute remains unchanged—it returns "Sarah".<br>
+          <strong>The HTML attribute value specifies the initial value; the DOM value property is the current value.</strong>
+        </p>
+        <hr>
+        <strong>Example 2: a disabled button:</strong>
+        <br>
+        <p>
+          <strong>button's disabled property is false by default so the button is enabled.</strong> <br>
+          When you add the disabled attribute, you are initializing the button's disabled property<br>
+          to true which disables the button.
+        </p>
+        <button disabled>Button with disabled attribute</button>
+        <br>
+        <p>
+          Removing and adding the disabled attribute disables and enables the button.<br>
+        </p>
+        <button>Button without disabled attribute</button>
+        <br>
+        <p>
+          However, the value of the attribute is irrelevant,
+          which is why you cannot enable a button by writing &lt;button disabled="false"&gt;Still Disabled&lt;/button&gt;.
+        </p>
+        <button disabled="false">still disabled</button>
+        <p>
+          To control the state of the button, set the <strong>disabled</strong> property instead.
+        </p>
+        <br>
+        <strong>Property and attribute comparison</strong>
+        <br>
+        <input [disabled]="condition ? true : false">
+        <input [attr.disabled]="condition ? 'disabled' : null">
+        <br>
+        <hr>
+        <strong>Toogle disabled property</strong><br>
+        <button id="testButton" (click)="working()">Test Button</button><br>
+        <br>
+        <button (click)="toggleDisabled()">Toggle disabled property</button><br>
+        <br>
+
+        <hr>
+
+        <h1 style="text-align: center;">Types of Data Binding</h1>
+
+        <ul style="list-style: none;">
+          <li>1) From the source to view</li>
+          <li>2) From view to source</li>
+          <li>3) In a two way sequence of view to source to view</li>
+        </ul>
+
+        <div class="container">
+          <div class="row">
+              <div class="col-md-4">
+                <strong>Type 1</strong><br>
+                  <p>Interpolation,Property,Attribute,Class,Style</p>
+                  <strong>Category</strong><br>
+                  <p>one-way<br>
+                  from data source<br>
+                to view target</p>
+
+                <strong>Syntax</strong><br>
+                    interpolation expression <br>
+                    [target]="expression"
+
+              </div>
+              <div class="col-md-4">
+                <strong>Type 2</strong><br>
+                <p>Event</p>
+                <strong>Category</strong><br>
+                <p>one-way<br>
+                from view target<br>
+              to data source</p>
+
+              <strong>Syntax</strong><br>
+                  (target)="statement"
+              </div>
+              <div class="col-md-4">
+                <strong>Type 3</strong><br>
+                <p>Two-way</p>
+                <strong>Category</strong><br>
+                <p>Two-way</p>
+
+                <strong>Syntax</strong><br>
+                [(target)]="expression"
+
+              </div>
+          </div>
+      </div><div class="container">
+        <div class="row">
+            <div class="col-md-4"></div>
+            <div class="col-md-4"></div>
+            <div class="col-md-4"></div>
+        </div>
+    </div>
+
+
+      <hr>
+
+      <ul>
+        <li>Binding types other than interpolation have a target name to the left of the equal sign.</li>
+        <li>The target of a binding is a property or event, which you surround with square brackets, [], parentheses, (), or both, [()].</li>
+      </ul>
+
+      <p>The binding punctuation of [], (), [()], and the prefix specify the direction of data flow.</p>
+
+      <ul>
+        <li>Use [ ] to bind from source to view.</li>
+        <li>Use ( ) to bind from view to source.</li>
+        <li>Use [( )] to bind in a two way sequence of view to source to view</li>
+      </ul>
+      <p>Place the expression or statement to the right of the equal sign within double quotes, ""</p>
+
+      <hr>
+
+      <h1 style="text-align: center;">Binding types and targets</h1>
+
+      <p>The target of a data binding can be a <strong>property, an event, or an attribute name.</strong><br>
+        Every public member of a source directive is automatically available for binding in a template expression or statement.<br>
+        The following table summarizes the targets for the different binding types.
+      </p>
+
+
+
+      <div class="container">
+        <div class="row">
+            <div class="col-md-2">
+              <strong>Type</strong><br>
+              <p>Property</p>
+              <strong>Target</strong><br>
+              <p>
+                Element property<br>
+                Component property<br>
+                Directive property
+              </p>
+            </div>
+            <div class="col-md-2">
+              <strong>Type</strong><br>
+              <p>Event</p>
+              <strong>Target</strong><br>
+              <p>
+                Element event<br>
+                Component event<br>
+                Directive event
+              </p>
+            </div>
+            <div class="col-md-2">
+              <strong>Type</strong><br>
+              <p>Two-way</p>
+              <strong>Target</strong><br>
+              <p>
+                Event and property
+              </p>
+            </div>
+            <div class="col-md-2">
+              <strong>Type</strong><br>
+              <p>Attribute</p>
+              <strong>Target</strong><br>
+              <p>
+                Attribute(the exception)
+              </p>
+            </div>
+            <div class="col-md-2">
+              <strong>Type</strong><br>
+              <p>Class</p>
+              <strong>Target</strong><br>
+              <p>
+                class property
+              </p>
+            </div>
+            <div class="col-md-2">
+              <strong>Type</strong><br>
+              <p>Style</p>
+              <strong>Target</strong><br>
+              <p>
+                style property
+              </p>
+            </div>
+
+        </div>
+        <button mat-raised-button color="primary"><a name="Lifecycle hooks">Lifecycle hooks</a></button>
+        <p>
+          A component instance has a lifecycle that starts when Angular instantiates<br>
+           the component class and renders the component view along with its child views.<br>
+           <br>
+           Your application can use lifecycle hook methods to tap into key events in the lifecycle of a component<br>
+            or directive to initialize new instances, initiate change detection when needed, respond to updates during<br>
+            change detection, and clean up before deletion of instances.<br>
+            <br>
+            <strong>Respond to lifrcycle events</strong><br>
+            Respond to events in the lifecycle of a component or directive by implementing one or more of <br>
+            the lifecycle hook interfaces in the Angular core library.<br>
+            <br>
+            <strong>Initializing a component or directive</strong><br>
+            Use the ngOnInit() method to perform the following initialization tasks.
+        </p>
+        <ul>
+          <li>Perform complex initializations outside of the constructor. </li>
+          <li>An ngOnInit() is a good place for a component to fetch its initial data. </li>
+        </ul>
+    </div>
+    <button mat-raised-button color="primary"><a name="Element selector"></a>Element selector</button>
+    <p>The CSS element selector, 'app-heroes', matches the name of the HTML element that identifies this component within a parent component's template.</p>
+    <button mat-raised-button color="primary"><a name="Template expressions"></a>Template expressions</button>
+    <p>
+      A template expression produces a value and appears within double curly braces, Angular resolves the expression and assigns it to a property of a binding target.<br>
+      The target could be an HTML element, a component, or a directive.<br>
+      The sum of 1 + 1 is (within interpolation--> 1+1 )<br>
+      <br>
+      With interpolation, Angular performs the following tasks:<br>
+    </p>
+    <ol>
+      <li>Evaluates all expressions in double curly braces.</li>
+      <li>Converts the expression results to strings</li>
+      <li>Links the results to any adjacent literal strings</li>
+      <li>Assigns the composite to an element or directive property.</li>
+    </ol>
+    <strong>Expression context</strong><br>
+    <p>
+      Interpolated expressions have a context—a particular part of the application to which the expression belongs. Typically, this context is the component instance.<br>
+      In the following snippet, the expression recommended and the expression itemImageUrl2 refer to properties of the AppComponent.<br>
+      <a target="blank" href="https://angular.io/guide/interpolation#template-expressions">https://angular.io/guide/interpolation#template-expressions</a><br><br>
+      An expression can also refer to properties of the template's context such as a template input variable or a template reference variable.<br>
+      The following example uses a template input variable of customer.<br>
+      <a target="blank" href="https://angular.io/guide/interpolation#template-expressions">https://angular.io/guide/interpolation#template-expressions</a><br><br>
+      An expression can also refer to properties of the template's context such as a <a target="blank" href="https://angular.io/guide/structural-directives#shorthand">template input variable</a> or a <a target="blank" href="https://angular.io/guide/template-reference-variables">template reference variable</a>.
+    </p>
+    <button mat-raised-button color="primary"><a name="Template variables"></a>Template variables</button><br>
+    Template variables help you use data from one part of a template in another part of the template.<br>
+    Use template variables to perform tasks such as respond to user input or finely tune your application's forms.<br>
+    <br>
+    A template variable can refer to the following:
+    <br>
+    <ul>
+      <li>a DOM element within a template</li>
+      <li>a directive</li>
+      <li>an element</li>
+      <li>TemplateRef</li>
+      <li>a web component</li>
+    </ul>
+    <p>
+      <strong>Syntax</strong><br>
+      In the template, you use the hash symbol, #, to declare a template variable.<br>
+      The following template variable, #phone, declares a phone variable on an &lt;input&gt; element.<br><br>
+      <strong>&lt;input #phone placeholder="phone number" /&gt;</strong><br><br>
+      Refer to a template variable anywhere in the component's template. Here, a &lt;button&gt; further down the template refers to the phone variable.<br><br>
+    </p>
+     <strong>&lt;button tag  (click)="callPhone(phone.value)"&gt; &lt;button tag&gt;</strong>
+    <p>
+      read more<br>
+      <strong><a target="blank" href="https://angular.io/guide/template-reference-variables">How Angular assigns values to template variables</a></strong><br>
+      <strong><a target="blank" href="https://angular.io/guide/template-reference-variables">Using NgForm with template variables</a></strong><br><br>
+      The following example uses a <strong>template input variable</strong> of customer.<br>
+      <a target="blank" href="https://angular.io/guide/interpolation#template-expressions">https://angular.io/guide/interpolation#template-expressions</a><br>
+      <strong>&lt; *ngFor="let customer of customers"&gt;</strong><br><br>
+      This next example features a <strong>template reference variable</strong> , #customerInput.<br>
+      <a target="blank" href="https://angular.io/guide/interpolation#template-expressions">https://angular.io/guide/interpolation#template-expressions</a><br>
+      <strong>&lt;input #customerInput&gt;</strong>
+    </p>
+    <button mat-raised-button color="primary"><a name="Pipes"></a>Pipes</button>
+    <p>
+      A class which is preceded by the @Pipe decorator and which defines a function that transforms input values to output values for display in a view.<br>
+      Angular defines various pipes, and you can define new pipes.<br>
+      <br>
+      Use pipes to transform strings, currency amounts, dates, and other data for display.<br>
+      Pipes are simple functions to use in template expressions to accept an input value and return a transformed value.<br>
+      <br>
+      Angular provides built-in pipes for typical data transformations, including transformations for internationalization (i18n), which use locale information to format data.<br>
+      The following are commonly used <strong>built-in pipes</strong>  for data formatting:
+    </p>
+    <ul>
+      <li>DatePipe: Formats a date value according to locale rules.</li>
+      <li>UpperCasePipe: Transforms text to all upper case.</li>
+      <li>LowerCasePipe: Transforms text to all lower case.</li>
+      <li>CurrencyPipe: Transforms a number to a currency string, formatted according to locale rules.</li>
+      <li>DecimalPipe: Transforms a number into a string with a decimal point, formatted according to locale rules.</li>
+      <li>PercentPipe: Transforms a number to a percentage string, formatted according to locale rules.</li>
+    </ul>
+    <hr>
+
+    <button mat-raised-button color="primary" routerLink="/two-way">Data binding</button>
+    <button mat-raised-button color="primary" routerLink="/attrclass" style="margin-left: 10px;">Attr/class/style bindings</button>
+    <button mat-raised-button color="primary" routerLink="/input-output" style="margin-left: 10px;">Input Output</button>
+    <button mat-raised-button color="primary" routerLink="/directives" style="margin-left: 10px;">Directives</button>
+    <button mat-raised-button color="warn" routerLink="/ngmodules" style="margin-left: 10px;">NgModules</button>
+    <hr>
+      </div>
+      <div class="col-md-offset-1 col-md-2">
+        <button mat-raised-button color="basic" style="margin-bottom: 10px;" routerLink="/two-way">Data binding</button>
+        <button mat-raised-button color="basic" style="margin-bottom: 10px;" routerLink="/attrclass">Attr/class/style bindings</button>
+        <button mat-raised-button color="basic" style="margin-bottom: 10px;" routerLink="/input-output">Input-Output</button>
+        <button mat-raised-button color="basic" style="margin-bottom: 10px;" routerLink="/directives">Directives</button>
+        <button mat-raised-button color="basic" style="margin-bottom: 10px;" routerLink="/ngmodules">NgModules</button>
+        <button mat-raised-button color="basic" style="margin-bottom: 10px;"><a href="#Lifecycle hooks">Lifecycle hooks</a></button>
+        <button mat-raised-button color="basic" style="margin-bottom: 10px;"><a href="#Element selector">Element selector</a></button>
+        <button mat-raised-button color="basic" style="margin-bottom: 10px;"><a href="#Template expressions">Template expressions</a></button>
+        <button mat-raised-button color="basic" style="margin-bottom: 10px;"><a href="#Template variables">Template variables</a></button>
+        <button mat-raised-button color="basic" style="margin-bottom: 10px;"><a href="#Pipes">Pipes</a></button>
+      </div>
+  </div>
+</div>
+
+

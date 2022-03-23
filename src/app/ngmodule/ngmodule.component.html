@@ -1,0 +1,32 @@
+<div class="container">
+  <div class="row">
+      <div class="col-md-8">
+        <h1 style="text-align: center;">NgModules</h1>
+        <hr>
+        <p>
+          NgModules configure the injector and the compiler and help organize related things together.<br>
+          An NgModule is a class marked by the @NgModule decorator.<br>
+          <br>
+        </p>
+        <ul>
+          <li>@NgModule takes a metadata object that describes how to compile a component's template and how to create an injector at runtime.</li>
+          <li>It identifies the module's own components, directives, and pipes, making some of them public, through the exports property, so that external components can use them.<br></li>
+          <li>@NgModule can also add service providers to the application dependency injectors.</li>
+        </ul>
+
+        <p>
+          Angular libraries are NgModules, such as FormsModule, HttpClientModule, and RouterModule. Many third-party libraries <br>
+          are available as NgModules such as Material Design, Ionic, and AngularFire2.NgModules consolidate components, directives,<br>
+          and pipes into cohesive blocks of functionality, each focused on a feature area, application business domain, workflow, or <br>
+          common collection of utilities.<br>
+          <br>
+          <strong>declrations</strong><br>
+          The set of components, directives, and pipes (declarables) that belong to this module.
+        </p>
+
+      </div>
+      <div class="col-md-4">
+        <button mat-raised-button color="primary" routerLink="/home" class="float-right">Home</button>
+      </div>
+  </div>
+</div>

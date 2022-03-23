@@ -1,0 +1,28 @@
+
+<div class="navbar is-white">
+
+  <h1 style="text-align: center;">Angular Help</h1>
+
+    <!-- menu -->
+    <div>
+      <button mat-button [matMenuTriggerFor]="menu">Menu</button>
+        <mat-menu #menu="matMenu">
+          <button routerLink="orders" mat-menu-item>orders</button>
+          <button routerLink="contact" mat-menu-item>contact</button>
+        </mat-menu>
+    </div>
+
+
+
+
+  </div>
+
+<!--
+  <div>
+    <button (click)="openDialog()" mat-button>Click</button>
+  </div> -->
+
+
+
+
+

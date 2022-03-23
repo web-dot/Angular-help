@@ -1,0 +1,48 @@
+
+<div class="container">
+  <div class="row">
+      <div class="col-md-offset-1 col-md-10">
+        <br>
+        <h1>Directives</h1>
+        <p>
+          Angular templates are dynamic. When Angular renders them, it transforms the DOM according to the instructions given by directives.<br>
+          <br>
+          A directive is a class with @Directive decorator<br>
+          <strong>A component is technically a directive.</strong><br>
+          However, components are so distinctive and central to Angular applications<br>
+           that Angular defines the @Component() decorator, which extends the @Directive()<br>
+           decorator with template-oriented features.<br>
+           <br>
+            In addition to components, there are two other kinds of directives: <strong>structural and attribute.</strong><br>
+            <strong>Just as for components,<em> the metadata for a directive associates the decorated class with a selector element that you use to insert it into HTML.</em></strong><br>
+            In templates, directives typically appear within an element tag as attributes, either by name or as the target of an assignment or a binding.
+        </p>
+        <button mat-raised-button color="primary" routerLink="/directives" style="margin-left: 10px;">Structural Directives</button><br>
+        <p>Structural directives alter layout by adding, removing, and replacing elements in the DOM.<br>
+          &lt;*ngFor&gt;<br>
+          &lt;*ngIf&gt;<br>
+          *ngFor is an iterative; it tells Angular to stamp out one &lt;li&gt; per hero in the heroes list.<br>
+          *ngIf is a conditional; it includes the HeroDetail component only if a selected hero exists<br>
+          <br>
+          <strong><a href="https://angular.io/guide/structural-directives">Creating a structural directive</a></strong>
+      </p>
+
+      <button mat-raised-button color="primary" routerLink="/directives" style="margin-left: 10px;">Attribute Directives</button><br>
+      <p>Attribute directives alter the appearance or behavior of an existing element. In templates they look like regular HTML attributes, hence the name.<br>
+        The <strong>ngModel</strong> directive, which implements two-way data binding, is an <strong>example of an attribute directive.</strong><br>
+        <br>
+        ngModel modifies the behavior of an existing element (typically &lt;input&gt;) by <strong>setting its display value property and responding to change events.</strong><br>
+        <strong>&lt;input type="text" id="hero-name" [(ngModel)]="hero.name"&gt;</strong><br>
+        <br>
+        Angular has more pre-defined directives that either alter the layout structure (for example, <strong>ngSwitch</strong>)<br>
+        or modify aspects of DOM elements and components (for example, <strong>ngStyle and ngClass</strong>)
+      </p>
+      <hr>
+      </div>
+      <div class="col-md-2">
+        <button mat-raised-button color="primary" routerLink="/home" class="float-right">Home</button>
+      </div>
+  </div>
+</div>
+
+

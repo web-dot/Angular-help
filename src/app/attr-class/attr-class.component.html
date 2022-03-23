@@ -1,0 +1,50 @@
+<hr>
+<div class="container">
+  <div class="row">
+      <div class="col-md-offset-1 col-md-7">
+        <h1 style="text-align: center;">Attribute, class, and style bindings</h1>
+        <p>
+          Attribute binding in Angular helps you set values for attributes directly.<br>
+          With attribute binding, you can improve accessibility, style your application dynamically, and manage multiple CSS classes or styles simultaneously.<br>
+          <br>
+          <strong>Binding to an attribute</strong><br>
+          It is recommended that you set an element property with a property binding whenever possible.<br>
+          However, sometimes you don't have an element property to bind. In those situations, use attribute binding.<br>
+          <br>
+          For example, ARIA and SVG are purely attributes. Neither ARIA nor SVG correspond to element<br>
+          properties and don't set element properties. In these cases, you must use attribute binding <br>
+          <br>
+          <strong>Syntax</strong><br>
+          Attribute binding syntax resembles property binding, but instead of an element property between brackets,
+          you precede the name of the attribute with the prefix attr, followed by a dot.
+          because there are no corresponding property targets.Then, you set the attribute value with an expression that resolves to a string.<br>
+          <br>
+          <strong>&lt;p [attr.attribute-you-are-targeting]="expression"&gt;&lt;/p&gt;</strong><br>
+          <br>
+          <strong>Binding to the class attribute</strong><br>
+          Use class binding to add and remove CSS class names from an element's class attribute.<br>
+        </p>
+        <p>
+          <em style="color: royalblue; font-size: 17px;">Binding to single CSS class</em><br>
+          To create a single class binding, use the prefix class followed by a dot and the name of the CSS class—for example,<br>
+           <strong>[class.sale]="onSale"</strong>.<br>
+          Angular adds the class when the bound expression, onSale is truthy, and it removes the class when the expression is falsy<br>
+          <br>
+          <em style="color: royalblue; font-size: 17px;">Binding to multiple CSS classes</em><br>
+          To bind to multiple classes, use [class] set to an expression—for example, [class]="classExpression". The expression can be one of:
+        </p>
+        <ul>
+          <li>A space-delimited string of class names.</li>
+          <li>An object with class names as the keys and truthy or falsy expressions as the values.</li>
+          <li>An array of class names</li>
+        </ul>
+        <p>
+          more..
+          <a href="https://angular.io/guide/attribute-binding#class-binding">Attribute, class, and style bindings</a>
+        </p>
+      </div>
+      <div class="col-md-3">
+        <button mat-raised-button color="primary" routerLink="/home" class="float-right">Home</button>
+      </div>
+  </div>
+</div>

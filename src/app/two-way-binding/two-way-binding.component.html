@@ -1,0 +1,71 @@
+<hr>
+<div class="container">
+  <div class="row">
+      <div class="col-md-offset-1 col-md-10">
+        <h1 style="text-align: center;">Data binding</h1>
+          <hr>
+
+          <p><strong>Angular supports two-way data binding, a mechanism for coordinating the parts of a template with the parts of a component.</strong><br>
+            Add binding markup to the template HTML to tell Angular how to connect both sides.<br>
+
+            Following shows four forms of data binding, each form has a direction: to the DOM, from the DOM or both<br>
+            <br>
+
+            <strong>
+            interpolation braces ::::: DOM <---------- COMPONENT<br>
+            [property] = "value" ::::: DOM <---------- COMPONENT<br>
+            <br>
+            (event) = "handler" :::: DOM --------------> COMPONENT<br>
+            <br>
+            [(ngModel)] = "property" :::: DOM <----------------> COMPONENT
+          </strong><br>
+          <br>
+          This example uses three of tese forms<br>
+          <br>
+          <li>{{name}} (interpolation: dom <-------- component)</li><br>
+          <button [disabled]="isUnchanged">Property: dom <-------- component</button><br>
+          <br>
+          <button (click)="handleEvent()">Event: dom --------> component</button>
+
+          </p>
+
+          <ul>
+            <li>The name <strong>interpolation</strong> displays the component's name property value within the element.</li>
+            <li>The [disabled] <strong>property binding</strong> passes the value of isUnchanged to the disabled property of the button.</li>
+            <li>The click <strong>event binding</strong> calls the components handleEvent() method when user clicks the button.</li>
+            <a href="https://angular.io/guide/event-binding"><strong>Event binding</strong></a>
+          </ul>
+          <p>
+            <strong>Binding to events</strong><br>
+            To bind to an event you use the Angular event binding syntax.<br>
+            This syntax consists of a target event name within parentheses to the left of an equal sign, and a quoted template statement to the right.
+          </p>
+          <strong>&lt;button (click)="onSave()"&gt;Save&lt;/button&gt;</strong>
+
+          <hr>
+
+          <h1 style="text-align: center;">Two-way data binding</h1>
+          <p>
+            <strong>Two-way data binding (used mainly in template-driven forms) combines property and event binding in a single notation. </strong><br>
+            Here's an example that uses two-way data binding with the ngModel directive.<br>
+            <br>
+
+            &lt;input type="text" id="name" [(ngModel)]="name"&gt;<br>
+            <br>
+            <input type="text" id="name" [(ngModel)]="location" (change)="getName()"><br>
+            In two-way binding<strong>, a data property value flows</strong> to the input box<strong> from the component </strong>as with property binding.<br>
+            <strong>The user's changes also flow back to the component, resetting the property to the latest value, as with event binding.</strong><br>
+            <small>check console for the updated value of name property.</small>
+          </p>
+
+
+
+
+          <hr>
+
+      </div>
+      <div class="col-md-2">
+        <button mat-raised-button color="primary" routerLink="/home" class="float-right">Home</button>
+      </div>
+  </div>
+</div>
